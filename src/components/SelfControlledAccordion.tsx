@@ -12,13 +12,11 @@ function UncontrolledAccordion(props: AccordionPropsType) {
 
 
     return (
-        <div>
+        <div onClick={() => {
+            setCollapsed(!collapsed)
+        }}>
             <AccordionTitle title={props.titleValue}/>
-            <button onClick={() => {
-                setCollapsed(true)
-            }}>TOGGLE
-            </button>
-            {!collapsed === true && <AccordionBody/>}
+            {!collapsed && <AccordionBody/>}
         </div>
     )
 }
